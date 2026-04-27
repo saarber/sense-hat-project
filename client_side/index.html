@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A reusable open-source dashboard for displaying Raspberry Pi Sense HAT sensor data."
+    />
+    <title>Project Name | Raspberry Pi Sense HAT Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <p class="project-title">Project Name Placeholder</p>
+        <nav class="project-links" aria-label="Project links">
+          <a href="#dashboard">Sensor data</a>
+          <a href="#configuration">Configuration</a>
+          <a href="https://github.com/your-user/your-repository">Repository placeholder</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Raspberry Pi Sense HAT</p>
+          <h1 id="page-title">Open sensor data dashboard</h1>
+          <p class="lead">
+            This reusable page displays live readings from Raspberry Pi Sense HAT devices,
+            including temperature, humidity, air pressure, and compass heading. Replace the
+            placeholder text and API configuration with your own project details before publishing.
+          </p>
+          <div class="actions">
+            <button type="button" data-refresh-button>Refresh now</button>
+            <span class="status-line" data-global-status>Waiting for the first poll...</span>
+          </div>
+        </div>
+
+        <aside class="panel" aria-labelledby="configuration">
+          <p class="eyebrow">Customize this page</p>
+          <h2 id="configuration">Project settings</h2>
+          <p class="help-text">
+            Update these placeholders in the HTML and configure real API sources in
+            <code>senseit-config.js</code>.
+          </p>
+          <ul class="config-list">
+            <li>
+              <strong>Project name</strong>
+              <span class="help-text">Example: My Sense HAT Weather Station</span>
+            </li>
+            <li>
+              <strong>Description</strong>
+              <span class="help-text">Explain what your Raspberry Pi measures and where it runs.</span>
+            </li>
+            <li>
+              <strong>API base URLs</strong>
+              <span class="help-text">Example: https://example.com/sensehat-a</span>
+            </li>
+            <li>
+              <strong>Sensor labels</strong>
+              <span class="help-text">Example: Indoor sensor, outdoor sensor, lab bench sensor.</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="dashboard" aria-labelledby="dashboard-title">
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow">Live readings</p>
+            <h2 id="dashboard-title">Sense HAT sensor data</h2>
+            <p class="help-text">
+              The cards below use the existing JavaScript polling logic. Sensor names and URLs
+              are populated from <code>senseit-config.js</code>.
+            </p>
+          </div>
+          <span class="auto-refresh-label" data-refresh-label>Auto-refresh enabled</span>
+        </div>
+
+        <div class="telemetry-grid">
+          <section class="telemetry-card" data-source-card aria-labelledby="source-a-title">
+            <header class="telemetry-card-header">
+              <div>
+                <span class="telemetry-source-name" data-source-name>Sensor Source A</span>
+                <h3 id="source-a-title">Source A placeholder</h3>
+                <span class="source-url" data-source-url>API URL placeholder</span>
+              </div>
+              <div class="telemetry-badge" data-state-badge data-state="loading">
+                <span class="telemetry-badge-dot" aria-hidden="true"></span>
+                <span data-status-text>Awaiting data...</span>
+              </div>
+            </header>
+
+            <div class="telemetry-card-grid">
+              <div class="metric-grid" aria-label="Source A sensor values">
+                <article class="metric-card">
+                  <span class="metric-label">Temperature label placeholder</span>
+                  <span class="metric-value" data-metric-value="temperature">-</span>
+                  <span class="metric-footnote">Temperature from the Sense HAT sensor.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Humidity label placeholder</span>
+                  <span class="metric-value" data-metric-value="humidity">-</span>
+                  <span class="metric-footnote">Relative humidity from the Sense HAT sensor.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Pressure label placeholder</span>
+                  <span class="metric-value" data-metric-value="pressure">-</span>
+                  <span class="metric-footnote">Atmospheric pressure in hPa.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Heading label placeholder</span>
+                  <span class="metric-value" data-metric-value="north">-</span>
+                  <span class="metric-footnote">Compass heading in degrees.</span>
+                </article>
+              </div>
+
+              <article class="compass-card" aria-label="Compass heading for source A">
+                <div class="compass-head">
+                  <span class="metric-label">Compass</span>
+                  <span class="compass-direction" data-compass-direction></span>
+                </div>
+                <div class="compass-visual" aria-label="Compass showing north heading">
+                  <div class="compass-ring" data-compass-ticks></div>
+                  <div class="compass-cardinals">
+                    <span class="north">N</span>
+                    <span class="south">S</span>
+                  </div>
+                  <div class="compass-arrow-wrap" data-compass-arrow>
+                    <div class="compass-arrow"></div>
+                  </div>
+                  <div class="compass-center"></div>
+                </div>
+                <div class="compass-readout">
+                  <span class="compass-degrees" data-compass-degrees>0.0&deg;</span>
+                  <span class="compass-direction" data-compass-direction></span>
+                </div>
+              </article>
+            </div>
+
+            <footer class="telemetry-status-row">
+              <span class="last-updated">Last update: <span data-last-updated>-</span></span>
+            </footer>
+          </section>
+
+          <section class="telemetry-card" data-source-card aria-labelledby="source-b-title">
+            <header class="telemetry-card-header">
+              <div>
+                <span class="telemetry-source-name" data-source-name>Sensor Source B</span>
+                <h3 id="source-b-title">Source B placeholder</h3>
+                <span class="source-url" data-source-url>API URL placeholder</span>
+              </div>
+              <div class="telemetry-badge" data-state-badge data-state="loading">
+                <span class="telemetry-badge-dot" aria-hidden="true"></span>
+                <span data-status-text>Awaiting data...</span>
+              </div>
+            </header>
+
+            <div class="telemetry-card-grid">
+              <div class="metric-grid" aria-label="Source B sensor values">
+                <article class="metric-card">
+                  <span class="metric-label">Temperature label placeholder</span>
+                  <span class="metric-value" data-metric-value="temperature">-</span>
+                  <span class="metric-footnote">Temperature from the Sense HAT sensor.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Humidity label placeholder</span>
+                  <span class="metric-value" data-metric-value="humidity">-</span>
+                  <span class="metric-footnote">Relative humidity from the Sense HAT sensor.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Pressure label placeholder</span>
+                  <span class="metric-value" data-metric-value="pressure">-</span>
+                  <span class="metric-footnote">Atmospheric pressure in hPa.</span>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Heading label placeholder</span>
+                  <span class="metric-value" data-metric-value="north">-</span>
+                  <span class="metric-footnote">Compass heading in degrees.</span>
+                </article>
+              </div>
+
+              <article class="compass-card" aria-label="Compass heading for source B">
+                <div class="compass-head">
+                  <span class="metric-label">Compass</span>
+                  <span class="compass-direction" data-compass-direction></span>
+                </div>
+                <div class="compass-visual" aria-label="Compass showing north heading">
+                  <div class="compass-ring" data-compass-ticks></div>
+                  <div class="compass-cardinals">
+                    <span class="north">N</span>
+                    <span class="south">S</span>
+                  </div>
+                  <div class="compass-arrow-wrap" data-compass-arrow>
+                    <div class="compass-arrow"></div>
+                  </div>
+                  <div class="compass-center"></div>
+                </div>
+                <div class="compass-readout">
+                  <span class="compass-degrees" data-compass-degrees>0.0&deg;</span>
+                  <span class="compass-direction" data-compass-direction></span>
+                </div>
+              </article>
+            </div>
+
+            <footer class="telemetry-status-row">
+              <span class="last-updated">Last update: <span data-last-updated>-</span></span>
+            </footer>
+          </section>
+        </div>
+      </section>
+
+      <section class="notes" aria-label="Project notes">
+        <article class="panel">
+          <p class="eyebrow">API endpoints</p>
+          <h2>Expected sensor routes</h2>
+          <p class="help-text">
+            The default script reads numeric values from
+            <code>/api/get_temperature</code>, <code>/api/get_humidity</code>,
+            <code>/api/get_pressure</code>, and <code>/api/get_north</code> on each
+            configured source.
+          </p>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Open-source use</p>
+          <h2>Reuse and adapt</h2>
+          <p class="help-text">
+            Replace this section with setup instructions, hardware notes, license
+            information, deployment steps, or links to your documentation.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page">
+        <span>Open-source Sense HAT dashboard placeholder</span>
+        <span>Update license and repository links before publishing.</span>
+      </div>
+    </footer>
+
+    <script src="senseit-config.js"></script>
+    <script src="sensors.js"></script>
+  </body>
+</html>

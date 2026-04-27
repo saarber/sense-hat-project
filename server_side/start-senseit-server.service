@@ -1,0 +1,15 @@
+[Unit]
+Description=My Startup Script
+After=network.target
+
+[Service]
+WorkingDirectory=/home/[user-Name]/sense-hat-project/server_side/
+ExecStart=/home/[user-name]/SenseIt/sense-hat-project/start-server.sh
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+#add it to the system services as sudo vi /etc/systemd/system/start-senseit-server.service
