@@ -1,7 +1,7 @@
 (() => {
   const DEFAULT_SOURCES = [
-    { key: 'source-a', label: 'Sense HAT PI A - Living Room', baseUrl: 'https://sensors.example.com/sensehat-a' },
-    { key: 'source-b', label: 'Sense HAT PI B - Studio', baseUrl: 'https://sensors.example.com/sensehat-b' }
+    { key: 'source-a', label: 'Sense HAT PI A', baseUrl: 'https://sensors.example.com/sensehat-a' },
+    { key: 'source-b', label: 'Sense HAT PI B', baseUrl: 'https://sensors.example.com/sensehat-b' }
   ];
 
    const SOURCES = Array.isArray(window.SENSEIT_SOURCES) && window.SENSEIT_SOURCES.length === 2

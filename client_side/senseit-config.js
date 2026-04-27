@@ -1,12 +1,12 @@
 window.SENSEIT_SOURCES = [
   {
     key: 'source-a',
-    label: 'Sense HAT PI A - Living Room',
+    label: 'Sense HAT PI A',
     baseUrl: 'https://sensors.example.com/sensehat-a'
   },
   {
     key: 'source-b',
-    label: 'Sense HAT PI B - Studio',
+    label: 'Sense HAT PI B',
     baseUrl: 'https://sensors.example.com/sensehat-b'
   }
 ];
