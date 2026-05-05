@@ -1,5 +1,5 @@
 sudo apt-get install python3-Flask
 sudo apt-get install python3-gunicorn
 sudo apt-get install python3-ssl
-
+sudo apt-get install sense_hat
 if any other package is missing run sudo apt install python3-XXX where XXX is the package name to install on rasbery pi
